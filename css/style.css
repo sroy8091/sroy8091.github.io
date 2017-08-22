@@ -9,7 +9,7 @@
   font-family: 'Poiret One', 'sans-serif';
   font-size: 100px;
   text-shadow: 4px 4px 4px #5a2626;
-  margin-top: 30px;
+  margin-top: 10%;
   margin-bottom: 150px;
 }
 #home {
@@ -17,8 +17,12 @@
   background: url("http://www.orphicpixel.com/wp-content/uploads/2013/08/minimal-wallpaper-01.png")fixed;
   background-position: fixed;
   background-size: contain;
-  height: 700px;
-  margin-top: 50px;
+  height: 100%;
+  width: 100%;
+  /*margin-top: 5%;*/
+}
+#home-cont {
+  margin-bottom: 10%;
 }
 #home p {
   color: #ffff80;
@@ -51,8 +55,9 @@
   background: url("http://p1.pichost.me/i/74/1990192.jpg") center center fixed;
   background-position: fixed;
   background-size: contain;
-  height: 620px;
-  margin: -50px;
+  height: 100%;
+  width: 100%;
+  margin-bottom: -10%;
   color: #fff;
 }
 #about h1 {
@@ -74,7 +79,7 @@
 }
 #about img {
   border-radius: 50%;
-  align: middle;
+  text-align: middle;
   height: 300px;
   width: 300px;
   padding: 30px;
@@ -83,7 +88,8 @@
 #portfolio {
   background: url("http://p1.pichost.me/i/28/1514076.jpg") center center fixed;
   height: 1100px;
-  margin: -50px;
+  width: 100%;
+  margin-bottom: -50px;
   background-size: contain;
   text-align: center;
 }
@@ -110,7 +116,7 @@
 }
 
 .footer ul li {
-  text-color: white;
+  color: white;
   font-size: 14px;
   display: inline;
   margin: 10px 10px 10px 10px;
@@ -128,4 +134,9 @@
 #con:hover {
   color: green;
   text-display: "sroy8091@gmail.com";
+}
+
+.icon-icon {
+  width: 5%;
+  height: 3%;
 }
