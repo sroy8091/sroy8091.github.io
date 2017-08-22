@@ -1,17 +1,5 @@
 $(document).ready(function() {
-  $("#button1").click(function() {
-    window.open("https://in.linkedin.com/in/sumit-roy-15a287aa");
-  });
-  $("#button2").click(function() {
-    window.open("https://github.com/sroy8091");
-  });
-  $("#button3").click(function() {
-    window.open("https://twitter.com/sroy8091");
-  });
-  $("#button4").click(function() {
-    window.open("https://www.facebook.com/sumit.roy.925059");
-  });
-
+  
   $("body").scrollspy({ target: ".navbar", offset: 50 });
 
   $("#myNavbar a").on("click", function(event) {
