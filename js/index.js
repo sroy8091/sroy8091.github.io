@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  
+
   $("body").scrollspy({ target: ".navbar", offset: 50 });
 
   $("#myNavbar a").on("click", function(event) {
@@ -16,15 +16,6 @@ $(document).ready(function() {
         window.location.hash = hash;
       }
     );
-  });
-  $("#image1").click(function() {
-    window.open("www.kgec.ac.in");
-  });
-  $("#image3").click(function() {
-    window.open("www.preseed.in/team.html");
-  });
-  $("#image5").click(function() {
-    window.open("https://codepen.io/sroy8091/full/JGzXJG");
   });
   
   //typed.js javascript

@@ -14,7 +14,7 @@
 }
 #home {
   text-align: center;
-  background: url("http://www.orphicpixel.com/wp-content/uploads/2013/08/minimal-wallpaper-01.png")fixed;
+  background: url("../img/home.png")fixed;
   background-position: fixed;
   background-size: contain;
   height: 100%;
@@ -52,7 +52,7 @@
 }
 #about {
   text-align: center;
-  background: url("http://p1.pichost.me/i/74/1990192.jpg") center center fixed;
+  background: url("../img/about.jpg") center center fixed;
   background-position: fixed;
   background-size: contain;
   height: 100%;
@@ -86,15 +86,15 @@
   margin-top: 40px;
 }
 #portfolio {
-  background: url("http://p1.pichost.me/i/28/1514076.jpg") center center fixed;
+  background: url("../img/portfolio.jpg") center center fixed;
   height: 1100px;
   width: 100%;
-  margin-bottom: -50px;
+  /*margin-bottom: -50px;*/
   background-size: contain;
   text-align: center;
 }
 #portfolio h1 {
-  margin-top: 250px;
+  margin-top: 10%;
   color: white;
   text-shadow: 4px 2px 4px black;
 }
