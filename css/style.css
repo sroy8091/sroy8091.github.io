@@ -109,6 +109,13 @@
   color: #737373;
 }
 
+.proj {
+  border: solid;
+  margin-right: 1%;
+  margin-bottom: 1%;
+  margin-left: 6%;
+}
+
 .footer {
   height: 80px;
   background-color: #999999;
