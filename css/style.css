@@ -9,7 +9,7 @@
   font-family: 'Poiret One', 'sans-serif';
   font-size: 100px;
   text-shadow: 4px 4px 4px #5a2626;
-  margin-top: 15%;
+  margin-top: 7%;
   margin-bottom: 150px;
 }
 #home {
@@ -28,6 +28,7 @@
   color: #ffff80;
   font-size: 30px;
   font-family: Robotto;
+  margin-top: 20%
 }
 
 .typed::after {
@@ -52,6 +53,8 @@
   color: #999900;
   transition: 0.5s;
 }
+
+/*----------------- ABOUT CSS ----------------*/
 #about {
   text-align: center;
   background: url("../img/about.jpg") center center fixed;
@@ -62,9 +65,7 @@
   margin-bottom: -10%;
   color: #fff;
 }
-#about h1 {
-  margin-top: 70px;
-}
+
 #about p {
   font-size: 30px;
   margin-top: 90px;
@@ -74,7 +75,12 @@
 #about span {
   color: #b36b00;
 }
+#about a {
+  color: #b36b00;
+  text-decoration: none;
+}
 #about h1 {
+  margin-top: 70px;
   text-align: center;
   color: #b30000;
   text-shadow: 4px 2px 4px black;
