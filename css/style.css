@@ -260,6 +260,120 @@ display: none;
   transform: rotate(56.5deg) translateX(-1px);
 }
 
+/*------------- The Resume  ---------------*/
+#resume {
+  text-align: center;
+  background: url("../img/resume1.jpg") center center fixed;
+  background-position: fixed;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  /*margin-bottom: -10%;*/
+  color: #fff;
+}
+#resume h2 {
+  color: #ffffff;
+  text-shadow: 1px 0px 10px #3d0808;
+}
+#resume h3 {
+  color: #ffffff;
+  text-shadow: 1px 0px 10px #3d0808;
+}
+.icons {
+  font-size: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.icon {
+  display: inline-block;
+  width: 40px;
+  height: 50px;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  margin: 0 5px;
+}
+.icon::after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-radius: 0 2px;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.icon--pdf {
+  background-color: #db4437;
+}
+.icon--pdf::after {
+  background: -webkit-linear-gradient(45deg, #e78178 50%, #fff 50%);
+  background: linear-gradient(45deg, #e78178 50%, #fff 50%);
+}
+.icon--pdf i::before {
+  content: '☵';
+}
+.icon i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: block;
+  font-size: 10px;
+  color: #fff;
+  font-weight: 500;
+}
+.icon i::before, .icon i::after {
+  display: block;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.icon i::before {
+  text-align: center;
+  font-size: 12px;
+  opacity: 0;
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+}
+.icon i::after {
+  content: attr(title);
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+.icon:hover {
+  border-radius: 2px 4px 2px 2px;
+}
+.icon:hover::after {
+  width: 12px;
+  height: 12px;
+}
+.icon:hover i::before {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
+}
+.icon:hover i::after {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.modal-dialog,
+.modal-content {
+  height: 100%;
+  width: 90%;
+}
+.modal-body {
+    /* 100% = dialog height, 120px = header + footer */
+    height: 80%;
+    /*overflow-y: scroll;*/
+}
 
 /*------------------- FOOTER CSS --------------*/
 
