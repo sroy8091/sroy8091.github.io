@@ -60,7 +60,7 @@ body {
   margin-bottom: 1%;
 }
 .btn:hover {
-  background: #00000;
+  background: #000000;
   color: #999900;
   transition: 0.5s;
 }
