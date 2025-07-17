@@ -1,55 +1,31 @@
-$(document).ready(function() {
-
-  $("body").scrollspy({ target: ".navbar", offset: 50 });
-
-  $("#myNavbar a").on("click", function(event) {
-    event.preventDefault();
-
-    var hash = this.hash;
-
-    $("html, body").animate(
-      {
-        scrollTop: $(hash).offset().top
-      },
-      500,
-      function() {
-        window.location.hash = hash;
+document.addEventListener('DOMContentLoaded', function() {
+  // Smooth scroll for nav links
+  document.querySelectorAll('#myNavbar a.nav-link').forEach(link => {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      const hash = this.getAttribute('href');
+      const target = document.querySelector(hash);
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 56, // account for navbar height
+          behavior: 'smooth'
+        });
+        history.pushState(null, null, hash);
       }
-    );
+    });
   });
-  
-  //typed.js javascript
-  $(function(){
-	$(".typed").typed({
-		strings: ["developer.", "designer.", "enthusaist."],
-		// Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
-		stringsElement: null,
-		// typing speed
-		typeSpeed: 100,
-		// time before typing starts
-		startDelay: 1200,
-		// backspacing speed
-		backSpeed: 50,
-		// time before backspacing
-		backDelay: 800,
-		// loop
-		loop: true,
-		// show cursor
-		showCursor: false,
-		// character for cursor
-		cursorChar: "|",
-		// attribute to type (null == text)
-		attr: null,
-		// either html or text
-		contentType: 'html',
-		// call when done callback function
-		callback: function() {},
-		// starting callback function before each string
-		preStringTyped: function() {},
-		//callback for every typed string
-		onStringTyped: function() {},
-		// callback for reset
-		resetCallback: function() {}
-	});
-});
+
+  // typed.js initialization (v2.x API)
+  if (document.querySelector('.typed')) {
+    new Typed('.typed', {
+      strings: ["developer.", "designer.", "enthusiast."],
+      typeSpeed: 100,
+      startDelay: 1200,
+      backSpeed: 50,
+      backDelay: 800,
+      loop: true,
+      showCursor: false,
+      contentType: 'html',
+    });
+  }
 });

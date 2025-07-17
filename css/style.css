@@ -1,21 +1,25 @@
+/* Modernized CSS for Bootstrap 5 and best practices */
+:root {
+  --main-bg: #fff;
+  --main-accent: #b36b00;
+  --main-dark: #0E2F44;
+  --main-highlight: #FFC83F;
+}
 html {
   position: relative;
   min-height: 100%;
 }
 body {
-  /*margin: 0 0 100px;*/
-  /* bottom = footer height */
-  padding-top: 25px;
+  padding-top: 56px;
   padding-bottom: 75px;
+  background: var(--main-bg);
 }
 
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  background-color: #0E2F44;
-  color: #EEEEEE;
+.navbar-nav .nav-link.active, .navbar-nav .nav-link:focus, .navbar-nav .nav-link:hover {
+  background-color: var(--main-dark);
+  color: #EEEEEE !important;
 }
 #home h1 {
-  postion: absolute;
   color: #240f0f;
   font-family: 'Poiret One', 'sans-serif';
   font-size: 100px;
@@ -23,33 +27,21 @@ body {
   margin-top: 7%;
   margin-bottom: 150px;
 }
-#home {
-  text-align: center;
-  background: url("../img/home.png")fixed;
-  background-position: fixed;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
-  /*margin-top: 5%;*/
-}
-#home-cont {
-  margin-bottom: 10%;
-}
 #home p {
   color: #ffff80;
   font-size: 30px;
-  font-family: Robotto;
-  margin-top: 20%
+  font-family: Roboto, sans-serif;
+  margin-top: 20%;
 }
-
 .typed::after {
   content: '|';
   display: inline;
-  -webkit-animation: blink 0.7s infinite;
-  -moz-animation: blink 0.7s infinite;
   animation: blink 0.7s infinite;
 }
-
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
 .btn {
   background: white;
   color: black;
@@ -58,59 +50,42 @@ body {
   font-size: 20px;
   width: 100%;
   margin-bottom: 1%;
+  border-radius: 0.5rem;
+  transition: background 0.5s, color 0.5s;
 }
 .btn:hover {
-  background: #000000;
-  color: #FFC83F;
-  transition: 0.5s;
+  background: #000;
+  color: var(--main-highlight);
 }
-
-/*----------------- ABOUT CSS ----------------*/
 #about {
   text-align: center;
   background: url("../img/about.jpg") center center fixed;
-  background-position: fixed;
   background-size: cover;
-  height: 100%;
-  width: 100%;
-  margin-bottom: -10%;
   color: #fff;
 }
-
 #about p {
   font-size: 30px;
   margin-top: 90px;
-  text-align: center;
-  color: #ffffff;
+  color: #fff;
 }
-#about span {
-  color: #b36b00;
-}
-#about a {
-  color: #b36b00;
+#about span, #about a {
+  color: var(--main-accent);
   text-decoration: none;
 }
 #about h1 {
   margin-top: 70px;
-  text-align: center;
   color: #b30000;
   text-shadow: 4px 2px 4px black;
 }
 #about img {
   border-radius: 50%;
-  text-align: middle;
   height: 300px;
   width: 300px;
   padding: 30px;
   margin-top: 40px;
 }
-
-/*------------- PORTFOLIO CSS --------------*/
 #portfolio {
   background: url("../img/portfolio.jpg") center center fixed;
-  height: 100%;
-  width: 100%;
-  /*margin-bottom: -50px;*/
   background-size: cover;
   text-align: center;
 }
@@ -119,276 +94,54 @@ body {
   color: white;
   text-shadow: 4px 2px 4px black;
 }
-#portfolio h4 {
-  color: red;
-}
-#portfolio img {
-  height: 200px;
-  /*border-radius: 20px;*/
-}
 #portfolio h3 {
   color: #737373;
 }
-
-.proj {
-  /*border: solid;*/
-  margin-right: 3%;
-  margin-bottom: 1%;
-  margin-left: 4%;
-}
-
-
-.view {
-  width: 300px;
-  height: 200px;
-  margin: 10px;
-  float: left;
-  border: solid #fff;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  -webkit-box-shadow: 1px 1px 2px #e6e6e6;
-  -moz-box-shadow: 1px 1px 2px #e6e6e6;
+.card {
   box-shadow: 1px 1px 2px #e6e6e6;
-  cursor: default;
-  background: #fff url(../images/bgimg.jpg) no-repeat center center;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
-.view .mask,.view .content {
-  width: 300px;
+.card-img-top {
   height: 200px;
-  position: absolute;
-  overflow: hidden;
-  top: 0;
-  left: 0;
+  object-fit: cover;
 }
-.view img {
-  display: block;
-  position: relative;
+.card-title {
+  color: var(--main-accent);
 }
-.view h2 {
-  text-transform: uppercase;
-  color: #fff;
-  text-align: center;
-  position: relative;
-  font-size: 17px;
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.8);
-  margin: 20px 0 0 0;
+/* Ensure card-body uses flex and buttons are at the bottom */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
 }
-.view p {
-  font-family: Georgia, serif;
-  font-style: italic;
-  font-size: 12px;
-  position: relative;
-  color: #fff;
-  padding: 10px 20px;
-  text-align: center;
+.card-body .card-text,
+.card-body ul {
+  margin-bottom: 1rem;
 }
-.view a.info {
-  display: inline-block;
-  text-decoration: none;
-  /*padding: 7px 14px;*/
-  background: #7d2d2d;
-  color: #fff;
-  /*text-transform: uppercase;*/
-  -webkit-box-shadow: 0 0 1px #000;
-  -moz-box-shadow: 0 0 1px #000;
-  box-shadow: 0 0 1px #fff;
+.card-body .portfolio-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 0.5rem;
 }
-.view a.info: hover {
-  -webkit-box-shadow: 0 0 5px #000;
-  -moz-box-shadow: 0 0 5px #000;
-  box-shadow: 0 0 5px #000;
-}
-
-.view-ninth .mask-1,
-.view-ninth .mask-2{
-  background-color: rgba(0,0,0,0.5);
-  height: 361px;
-  width: 361px;
-  background: rgba(119,0,36,0.5);
-  opacity: 1;
-  transition: all 0.3s ease-in-out 0.6s;
-}
-.view-ninth .mask-1 {
-  left: auto;
-  right: 0px;
-  transform: rotate(56.5deg) translateX(-180px);
-  transform-origin: 100% 0%;
-}
-.view-ninth .mask-2 {
-  top: auto;
-  bottom: 0px;
-  transform: rotate(56.5deg) translateX(180px);
-  transform-origin: 0% 100%;
-}
-
-.view-ninth .content{
-  background: rgba(0,0,0,0.9);
-  height: 0px;
-  opacity: 0.5;
-  width: 361px;
-  overflow: hidden;
-  transform: rotate(-33.5deg) translate(-112px,166px);
-  transform-origin: 0% 100%;
-  transition: all 0.4s ease-in-out 0.3s;
-}
-.view-ninth h2{
-  background: transparent;
-  margin-top: 5px;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-}
-/*.view-ninth a.info{
-display: none;
-}*/
-
-.view-ninth:hover .content{
-  height: 120px;
-  width: 300px;
-  opacity: 0.9;
-  top: 40px;
-  transform: rotate(0deg) translate(0px,0px);
-}
-.view-ninth:hover .mask-1,
-.view-ninth:hover .mask-2{
-  transition-delay: 0s;
-}
-.view-ninth:hover .mask-1{
-  transform: rotate(56.5deg) translateX(1px);
-}
-.view-ninth:hover .mask-2 {
-  transform: rotate(56.5deg) translateX(-1px);
-}
-
-/*------------- The Resume  ---------------*/
-#resume {
-  text-align: center;
-  background: url("../img/resume1.jpg") center center fixed;
-  background-position: fixed;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
-  /*margin-bottom: -10%;*/
-  color: #fff;
-}
-#resume h2 {
-  color: #ffffff;
-  text-shadow: 1px 0px 10px #3d0808;
-}
-#resume h3 {
-  color: #ffffff;
-  text-shadow: 1px 0px 10px #3d0808;
-}
-.icons {
-  font-size: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-.icon {
-  display: inline-block;
-  width: 40px;
-  height: 50px;
-  border-radius: 2px;
-  cursor: pointer;
-  position: relative;
-  margin: 0 5px;
-}
-.icon::after {
-  content: '';
-  position: absolute;
-  display: block;
-  top: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-radius: 0 2px;
-  -webkit-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-}
-.icon--pdf {
-  background-color: #db4437;
-}
-.icon--pdf::after {
-  background: -webkit-linear-gradient(45deg, #e78178 50%, #fff 50%);
-  background: linear-gradient(45deg, #e78178 50%, #fff 50%);
-}
-.icon--pdf i::before {
-  content: '☵';
-}
-.icon i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  display: block;
-  font-size: 10px;
-  color: #fff;
-  font-weight: 500;
-}
-.icon i::before, .icon i::after {
-  display: block;
-  -webkit-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-}
-.icon i::before {
-  text-align: center;
-  font-size: 12px;
-  opacity: 0;
-  -webkit-transform: translateY(5px);
-          transform: translateY(5px);
-}
-.icon i::after {
-  content: attr(title);
-  -webkit-transform: translateY(-5px);
-          transform: translateY(-5px);
-}
-.icon:hover {
-  border-radius: 2px 4px 2px 2px;
-}
-.icon:hover::after {
-  width: 12px;
-  height: 12px;
-}
-.icon:hover i::before {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-  opacity: 1;
-}
-.icon:hover i::after {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-}
-.modal-dialog,
-.modal-content {
-  height: 100%;
-  width: 90%;
-}
-.modal-body {
-    /* 100% = dialog height, 120px = header + footer */
-    height: 80%;
-    /*overflow-y: scroll;*/
-}
-
-/*------------------- FOOTER CSS --------------*/
-
 footer {
-  background-color: #101010;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 80px;
-  width: 100%;
-  padding-top: 1vw;
-  overflow:hidden;
+  background: #f8f9fa;
+  color: #333;
+  padding: 2rem 0 1rem 0;
+  margin-top: 2rem;
 }
 footer p {
-color: #838689;
-font-size: 14px;
-/*margin: 10px 10px 10px 50px;*/
+  margin-bottom: 0;
 }
+.icon--pdf {
+  font-size: 2rem;
+  color: #b30000;
+  cursor: pointer;
+}
+.modal-content {
+  border-radius: 1rem;
+}
+/* Remove old .row-fluid, .col-sm-*, .col-xs-* selectors */
+/* Add more modern styles as needed */
