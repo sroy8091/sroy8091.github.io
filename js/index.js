@@ -16,9 +16,10 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // typed.js initialization (v2.x API)
-  if (document.querySelector('.typed')) {
-    new Typed('.typed', {
-      strings: ["developer.", "designer.", "enthusiast."],
+  const typedElement = document.querySelector('.typed');
+  if (typedElement) {
+    const typed = new Typed(typedElement, {
+      strings: ["a developer.", "a designer.", "an enthusiast.", "a learner."],
       typeSpeed: 100,
       startDelay: 1200,
       backSpeed: 50,
